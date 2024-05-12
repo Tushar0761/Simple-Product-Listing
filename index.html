@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Management App</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assest/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="d-flex container">
+        <a class="navbar-brand" href="./index.html">Product Management</a>
+        <div class="navbar-nav flex-row">
+          <div class="nav-item mx-2">
+            <a class="nav-link" href="./index.html">Home</a>
+          </div>
+          <div class="nav-item mx-2">
+            <a class="nav-link" href="./pages/add.html">Add Product</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6 col-lg-4 d-flex my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            id="seacrhBarInput"
+            type="search"
+            placeholder="Search Product"
+          />
+          <button class="btn btn-outline-success ms-2" id="seacrhBarBtn">
+            Search
+          </button>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="float-right d-flex align-items-center">
+            <span class="col-4"> Sort by: </span>
+            <select id="sortSelectInput" class="form-control form-select">
+              <option value="" selected>Default</option>
+              <option value="sortPLH">Price (low to high)</option>
+              <option value="sortPHL">Price (high to low)</option>
+              <option value="sortNAZ">Name (A-Z)</option>
+              <option value="sortNZA">Name (Z-A)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- create filter using select input -->
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <span class="col-4">Filter by:</span>
+          <select id="filterSelectInput" class="form-control form-select">
+            <option value="" selected>None</option>
+            <optgroup label="By Category">
+              <option value="Clothes">Cloths</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Furniture">Furniture</option>
+              <option value="Shoes">Shoes</option>
+              <option value="Miscellaneous">Miscellaneous</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <nav class="container mt-3">
+      <ul class="pagination" id="paginationUl"></ul>
+    </nav>
+    <!-- Hidden Spinner -->
+
+    <div id="loaderDiv" class="-none d-flex justify-content-center">
+      <div id="loadingSpinner" class="m-3"></div>
+    </div>
+    <!-- Loader Complete -->
+
+    <div id="errorDiv"></div>
+
+    <div id="productDiv" class="container d-flex flex-wrap gap-4 p-3"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./assest/utilityFunctions.js"></script>
+    <script src="./assest/app.js"></script>
+  </body>
+</html>
